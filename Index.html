@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Sign Up</h1>
+		<form id="username-form" onsubmit="submitUsernameForm(event)">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<button type="submit">Next</button>
+		</form>
+		<form id="phone-form" onsubmit="submitPhoneForm(event)">
+			<label for="phone">Phone Number:</label>
+			<input type="tel" id="phone" name="phone" required>
+			<button type="submit">Next</button>
+			<button type="button" onclick="goBack(event)">Back</button>
+		</form>
+		<form id="confirmation-form" onsubmit="submitConfirmationForm(event)">
+			<p>Please confirm your details:</p>
+			<p>Username: <span id="confirmation-username"></span></p>
+			<p>Phone Number: <span id="confirmation-phone"></span></p>
+			<button type="submit">Confirm</button>
+			<button type="button" onclick="goBack(event)">Back</button>
+		</form>
+		<form id="confirmation-code-form" onsubmit="submitConfirmationCodeForm(event)">
+			<label for="confirmation-code">Enter the verification code sent to your phone:</label>
+			<input type="text" id="confirmation-code" name="confirmation-code" required>
+			<button type="submit">Submit</button>
+			<button type="button" onclick="goBack(event)">Back</button>
+			<p id="error-message" class="error-message"></p>
+		</form>
+		<div id="chat-section">
+			<div id="messages"></div>
+			<form id="message-form" onsubmit="submitMessageForm(event)">
+				<input type="text" id="message-input" name="message-input" required>
+				<button type="submit">Send</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
